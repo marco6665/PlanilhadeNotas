@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Organizador de Notas</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+<header>
+  <div><p class="eyebrow">ESCOLA • NOTAS</p><h1 id="pageTitle">Organizador de Notas</h1><p class="subtitle">Organize notas por disciplina e turma.</p></div>
+  <button id="addStudent" class="primary">+ Adicionar aluno</button>
+</header>
+
+<section class="card identification">
+  <div class="field"><label for="discipline">Disciplina</label><input id="discipline" value="Matemática" placeholder="Ex.: Matemática"></div>
+  <div class="field"><label for="className">Turma</label><input id="className" value="2º Ano A" placeholder="Ex.: 2º Ano A"></div>
+  <div class="field"><label for="teacher">Professor(a)</label><input id="teacher" placeholder="Nome do professor"></div>
+  <div class="field"><label for="period">Bimestre</label><select id="period"><option>1º Bimestre</option><option>2º Bimestre</option><option selected>3º Bimestre</option><option>4º Bimestre</option></select></div>
+</section>
+
+<section class="card weights">
+  <div><h2>Composição da nota</h2><p class="muted">Os critérios podem ser ajustados no código se necessário.</p></div>
+  <div class="weight-grid"><span>Livro do Estudante <b>10%</b></span><span>Caderno <b>20%</b></span><span>Lista de Exercícios <b>10%</b></span><span>Prova Paulista <b>50%</b></span><span class="pending">Pendente <b>10%</b></span></div>
+</section>
+
+<section class="summary-grid">
+<div class="stat card"><span>Alunos</span><strong id="studentCount">0</strong></div>
+<div class="stat card"><span>Média da turma</span><strong id="classAverage">—</strong></div>
+<div class="stat card"><span>Maior média</span><strong id="highestAverage">—</strong></div>
+<div class="stat card"><span>Abaixo de 5</span><strong id="belowFive">0</strong></div>
+</section>
+
+<section class="card table-card">
+<div class="section-title"><div><h2>Notas dos alunos</h2><p class="muted">A média parcial considera os 90% definidos.</p></div><input id="search" type="search" placeholder="Buscar aluno..."></div>
+<div class="table-wrap"><table><thead><tr><th>Aluno</th><th>Livro<br><small>10%</small></th><th>Caderno<br><small>20%</small></th><th>Lista<br><small>10%</small></th><th>Prova Paulista<br><small>50%</small></th><th>Média parcial</th><th>Situação</th><th></th></tr></thead><tbody id="studentRows"></tbody></table></div>
+</section>
+
+<section class="card chart-card"><div class="section-title"><div><h2>Visualização das médias</h2><p class="muted">Comparação visual dos alunos da disciplina e turma selecionadas.</p></div></div><div id="chart" class="chart"></div></section>
+
+<footer><span>As informações ficam salvas apenas enquanto a página estiver aberta.</span><button id="clearAll" class="danger">Limpar alunos</button></footer>
+</main><script src="script.js"></script>
+</body></html>
